@@ -1,8 +1,8 @@
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
-import { GlobalContextProvider } from "./Context/store";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+// import { GlobalContextProvider } from "./Context/store";
+// import Header from "../components/Header/Header";
+// import Footer from "../components/Footer/Footer";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,21 +14,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
+        {/* <link
           rel="icon"
           href="https://www.aswo.com/typo3conf/ext/aswo/Resources/Public/Images/favicon.ico"
           sizes="any"
-        />
+        /> */}
       </head>
       <body className={inter.className}>
         <div className="wraper">
-          <Header />
+          {/* <Header /> */}
 
-          <GlobalContextProvider>
-            <section>{children}</section>
-          </GlobalContextProvider>
+          {/* <GlobalContextProvider> */}
+          <section>{children}</section>
+          {/* </GlobalContextProvider> */}
 
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
