@@ -18,20 +18,20 @@ import Link from "next/link";
 export default function App() {
   const [flutters, setFlutters] = useState(null);
   const [cehage, setCehage] = useState(false);
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const response = await fetch("/api/findNovelty");
-  //         const data = await response.json();
-  //         setFlutters(data);
-  //       } catch (error) {
-  //         console.log("Что-то пошло не так...", error);
-  //       } finally {
-  //         console.log("пошло так...");
-  //       }
-  //     };
-  //     fetchData();
-  //   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/findNovelty");
+        const data = await response.json();
+        setFlutters(data);
+      } catch (error) {
+        console.log("Что-то пошло не так...", error);
+      } finally {
+        console.log("пошло так...");
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className={styles.box_carusel}>
       <div className={styles.now}>Новинки</div>
