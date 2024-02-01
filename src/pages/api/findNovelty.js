@@ -1,4 +1,4 @@
-import Novelty from ".././models/novelty";
+import Novelty from "./models/novelty";
 import mongoose from "mongoose";
 
 mongoose.connect(process.env.MONGODB_URI, {
@@ -11,14 +11,12 @@ const handleError = (res, err) => {
 };
 
 const font = async (req, res) => {
-  try {
-    if (req.method === "GET") {
-      const products = await Novelty.find();
-      res.status(200).json(products);
-    }
-  } catch (err) {
-    handleError(res, err);
+  if (req.method === "GET") {
+    Novelty.find()
+      .then((product) => {
+        res.status(200).json(product);
+      })
+      .catch((err) => handleError(res, err));
   }
 };
-
 export default font;
