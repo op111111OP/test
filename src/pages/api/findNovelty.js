@@ -11,12 +11,14 @@ const handleError = (res, err) => {
 };
 
 const font = async (req, res) => {
-  if (req.method === "GET") {
-    Novelty.find()
-      .then((product) => {
-        res.status(200).json(product);
-      })
-      .catch((err) => handleError(res, err));
+  try {
+    if (req.method === "GET") {
+      const products = await Novelty.find();
+      res.status(200).json(products);
+    }
+  } catch (err) {
+    handleError(res, err);
   }
 };
+
 export default font;
