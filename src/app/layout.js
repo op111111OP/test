@@ -5,7 +5,7 @@ import "./globals.css";
 // import Footer from "../components/Footer/Footer";
 
 const inter = Montserrat({ subsets: ["latin"] });
-// import { UserProvider } from "./context/page";
+import { UserProvider } from "./context/page";
 
 export const metadata = {
   title: "",
@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <div className="wraper">
-          {/* <Header />
-          <UserProvider> */}
-          <section>{children}</section>
-          {/* </UserProvider>
-          <Footer /> */}
+          {/* <Header /> */}
+          <UserProvider>
+            <section>{children}</section>
+          </UserProvider>
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
